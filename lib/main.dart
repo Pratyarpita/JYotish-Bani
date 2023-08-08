@@ -1,4 +1,5 @@
 import 'package:astrology_app/astropage/HomePage_astrologer/dashboard_screen.dart';
+import 'package:astrology_app/astropage/bottom_nav_bar/bottom_nav_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,6 +14,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(primarySwatch: Colors.blue),
-        home: AstroDashBoardPage());
+        home: const CustomBottomNavigationBar());
   }
 }

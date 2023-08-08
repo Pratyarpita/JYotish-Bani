@@ -184,7 +184,7 @@ class _AstroDashBoardPageState extends State<AstroDashBoardPage> {
                         "Today's Earnings:",
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 17,
+                          fontSize: 19,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -199,11 +199,11 @@ class _AstroDashBoardPageState extends State<AstroDashBoardPage> {
                       Icon(
                         Icons.currency_rupee,
                         color: Colors.white,
-                        size: 15,
+                        size: 20,
                       ),
                       Text(
                         '720',
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(color: Colors.white, fontSize: 16),
                       ),
                     ]),
               ),

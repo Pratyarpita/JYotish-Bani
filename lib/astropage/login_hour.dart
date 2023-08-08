@@ -19,7 +19,7 @@ class _LoginHourState extends State<LoginHour> {
 
   DateTime selectedDate = DateTime.now();
   bool isLoginHourLoaded = false;
-  late String finalLoginHour;
+  String finalLoginHour = '';
 
   @override
   void initState() {
@@ -55,7 +55,7 @@ class _LoginHourState extends State<LoginHour> {
       child: Scaffold(
         backgroundColor: Colors.black,
         body: SingleChildScrollView(
-          child: isLoginHourLoaded ? SizedBox(
+          child:SizedBox(
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
             child: Column(
@@ -79,6 +79,7 @@ class _LoginHourState extends State<LoginHour> {
                 const SizedBox(
                   height: 20,
                 ),
+                isLoginHourLoaded ?
                 Padding(
                   padding: const EdgeInsets.only(left: 10, right: 10),
                   child: Row(
@@ -116,7 +117,7 @@ class _LoginHourState extends State<LoginHour> {
                       ),
                     ],
                   ),
-                ),
+                ): const Center(child: CircularProgressIndicator()),
                 const SizedBox(
                   height: 20,
                 ),
@@ -200,7 +201,7 @@ class _LoginHourState extends State<LoginHour> {
                 ),
               ],
             ),
-          ): const Center(child: CircularProgressIndicator()),
+          ),
         ),
       ),
     );

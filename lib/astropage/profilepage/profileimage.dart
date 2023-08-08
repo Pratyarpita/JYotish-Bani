@@ -91,8 +91,7 @@ class _ProfileImageState extends State<ProfileImage> {
                               Container(
                                 height:
                                     MediaQuery.of(context).size.height * 0.19,
-                                width:
-                                    MediaQuery.of(context).size.width * 0.25,
+                                width: MediaQuery.of(context).size.width * 0.25,
                                 decoration: BoxDecoration(
                                   shape: BoxShape.circle,
                                   border: Border.all(
@@ -133,8 +132,7 @@ class _ProfileImageState extends State<ProfileImage> {
                           ),
                           Text(
                             name,
-                            style:
-                                TextStyle(color: Colors.white, fontSize: 16),
+                            style: TextStyle(color: Colors.white, fontSize: 16),
                           ),
                           const SizedBox(
                             height: 5,
@@ -237,8 +235,7 @@ class _ProfileImageState extends State<ProfileImage> {
                                   padding: const EdgeInsets.symmetric(
                                       horizontal: 30, vertical: 5),
                                   shape: RoundedRectangleBorder(
-                                      borderRadius:
-                                          BorderRadius.circular(15))),
+                                      borderRadius: BorderRadius.circular(15))),
                               onPressed: () {},
                               child: const Text(
                                 "Share profile",

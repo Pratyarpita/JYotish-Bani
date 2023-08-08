@@ -1,3 +1,5 @@
+import 'package:astrology_app/astropage/HomePage_astrologer/dashboard_screen.dart';
+import 'package:astrology_app/astropage/bottom_nav_bar/bottom_nav_screen.dart';
 import 'package:flutter/material.dart';
 
 class GoLP extends StatefulWidget {
@@ -50,7 +52,7 @@ class _HeadLineState extends State<HeadLine> {
       children: [
         IconButton(
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.push(context, MaterialPageRoute(builder: (context) => CustomBottomNavigationBar()));
           },
           icon: const Icon(
             Icons.arrow_back_ios_sharp,

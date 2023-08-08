@@ -370,7 +370,6 @@ class _GridClassState extends State<GridClass> {
         context: context,
         removeTop: true,
         child: GridView.builder(
-          //shrinkWrap: true,
           physics: const BouncingScrollPhysics(
               parent: NeverScrollableScrollPhysics()),
           itemCount: astroHome.length,
@@ -380,7 +379,6 @@ class _GridClassState extends State<GridClass> {
             childAspectRatio: 0.95,
           ),
           shrinkWrap: true,
-
           itemBuilder: (context, index) => GestureDetector(
             onTap: () => tapped(index),
             child: AstroHome(
@@ -517,13 +515,12 @@ class AstroHome extends StatelessWidget {
             padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
-              // color: Colors.blue[400]
             ),
             child: Center(
               child: Image.asset(
                 image,
                 height: 22,
-                width: 22,
+                width: 25,
                 color: Colors.white,
               ),
             ),
