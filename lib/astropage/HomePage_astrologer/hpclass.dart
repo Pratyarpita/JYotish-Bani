@@ -11,7 +11,6 @@ import 'package:astrology_app/astropage/shortcuts_screen.dart';
 import 'package:astrology_app/astropage/support_screen.dart';
 import 'package:astrology_app/astropage/update_category.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_switch/flutter_switch.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
 class HomeContainer extends StatefulWidget {
@@ -312,46 +311,46 @@ class _PercentProgressBarState extends State<PercentProgressBar> {
   }
 }
 
-//---------------------------------Flutter Switch-----------------
-class HPFlutterswitch extends StatefulWidget {
-  const HPFlutterswitch(
-      {super.key,
-      required this.width,
-      required this.height,
-      required this.onToggle,
-      required this.value});
-  final double width;
-  final double height;
-  //final void onToggle;
-  final bool value;
-  final Function(bool) onToggle;
+// //---------------------------------Flutter Switch-----------------
+// class HPFlutterswitch extends StatefulWidget {
+//   const HPFlutterswitch(
+//       {super.key,
+//       required this.width,
+//       required this.height,
+//       required this.onToggle,
+//       required this.value});
+//   final double width;
+//   final double height;
+//   //final void onToggle;
+//   final bool value;
+//   final Function(bool) onToggle;
 
-  @override
-  State<HPFlutterswitch> createState() => _HPFlutterswitchState();
-}
+//   @override
+//   State<HPFlutterswitch> createState() => _HPFlutterswitchState();
+// }
 
-class _HPFlutterswitchState extends State<HPFlutterswitch> {
-  bool online_status = false;
-  bool call_status = false;
-  bool chat_status = false;
+// class _HPFlutterswitchState extends State<HPFlutterswitch> {
+//   // bool online_status = false;
+//   bool call_status = false;
+//   bool chat_status = false;
 
-  @override
-  Widget build(BuildContext context) {
-    return FlutterSwitch(
-      activeColor: Colors.white.withOpacity(0.2),
-      inactiveToggleColor: Colors.white,
-      inactiveColor: Colors.white.withOpacity(0.2),
-      activeToggleColor: Colors.green,
-      valueFontSize: 10,
-      value: widget.value,
-      borderRadius: 15,
-      toggleSize: 15.0,
-      activeTextColor: Colors.white,
-      showOnOff: true,
-      onToggle: widget.onToggle,
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return FlutterSwitch(
+//       activeColor: Colors.white.withOpacity(0.2),
+//       inactiveToggleColor: Colors.white,
+//       inactiveColor: Colors.white.withOpacity(0.2),
+//       activeToggleColor: Colors.green,
+//       valueFontSize: 10,
+//       value: widget.value,
+//       borderRadius: 15,
+//       toggleSize: 18,
+//       activeTextColor: Colors.white,
+//       showOnOff: true,
+//       onToggle: widget.onToggle,
+//     );
+//   }
+// }
 
 //-------------------------Grid View Class ----------------------------------------------
 class GridClass extends StatefulWidget {
@@ -365,7 +364,7 @@ class _GridClassState extends State<GridClass> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height,
+      height: MediaQuery.of(context).size.height * 0.65,
       child: MediaQuery.removePadding(
         context: context,
         removeTop: true,
@@ -519,7 +518,7 @@ class AstroHome extends StatelessWidget {
             child: Center(
               child: Image.asset(
                 image,
-                height: 22,
+                height: 30,
                 width: 25,
                 color: Colors.white,
               ),

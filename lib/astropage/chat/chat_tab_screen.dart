@@ -10,7 +10,8 @@ class ChatTabView extends StatefulWidget {
   State<ChatTabView> createState() => _ChatTabViewState();
 }
 
-class _ChatTabViewState extends State<ChatTabView> with TickerProviderStateMixin {
+class _ChatTabViewState extends State<ChatTabView>
+    with TickerProviderStateMixin {
   TabController? _tabController;
 
   @override
@@ -30,6 +31,7 @@ class _ChatTabViewState extends State<ChatTabView> with TickerProviderStateMixin
           child: BackdropFilter(
             filter: ImageFilter.blur(sigmaY: 10, sigmaX: 10),
             child: Container(
+              height: MediaQuery.of(context).size.height,
               width: width,
               color: Colors.white.withOpacity(0.1),
               child: Column(
@@ -39,10 +41,13 @@ class _ChatTabViewState extends State<ChatTabView> with TickerProviderStateMixin
                     onTap: (index) {
                       ///print(index);
                     },
-    
+
                     indicator: BoxDecoration(
-                        color: Color.fromARGB(255, 108, 108, 108).withOpacity(0.2),
-                        border: Border.all(color: Color.fromARGB(255, 108, 108, 108).withOpacity(0.2))),
+                        color: Color.fromARGB(255, 108, 108, 108)
+                            .withOpacity(0.2),
+                        border: Border.all(
+                            color: Color.fromARGB(255, 108, 108, 108)
+                                .withOpacity(0.2))),
                     //indicatorColor: Colors.amber,
                     // indicator: const UnderlineTabIndicator(
                     //     insets: EdgeInsets.only(left: 20, right: 20),
@@ -76,7 +81,7 @@ class _ChatTabViewState extends State<ChatTabView> with TickerProviderStateMixin
                   Flexible(
                     child: TabBarView(
                         controller: _tabController,
-                        physics: const NeverScrollableScrollPhysics(),
+                        // physics: const NeverScrollableScrollPhysics(),
                         children: const [
                           SizedBox(
                             child: ChatConnect(),

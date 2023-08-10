@@ -1,5 +1,5 @@
 import 'package:astrology_app/astropage/HomePage_astrologer/dashboard_screen.dart';
-import 'package:astrology_app/astropage/bottom_nav_bar/bottom_nav_screen.dart';
+import 'package:astrology_app/astropage/bottom_nav_bar/bottom.dart';
 import 'package:astrology_app/astropage/chat/chat_tab_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -34,7 +34,8 @@ class _ConnectPageState extends State<ConnectPage> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => CustomBottomNavigationBar()));
+                                  builder: (context) =>
+                                      CustomBottomNavigationBar()));
                         },
                         icon: const Icon(
                           Icons.keyboard_arrow_left,
@@ -68,7 +69,7 @@ class _ConnectPageState extends State<ConnectPage> {
               const Flexible(child: ChatTabView()),
               // ),
               const SizedBox(
-                height: 3,
+                height: 15,
               ),
             ],
           ),

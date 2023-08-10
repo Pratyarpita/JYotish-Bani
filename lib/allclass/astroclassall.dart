@@ -1,5 +1,5 @@
 import 'package:astrology_app/astropage/HomePage_astrologer/dashboard_screen.dart';
-import 'package:astrology_app/astropage/bottom_nav_bar/bottom_nav_screen.dart';
+import 'package:astrology_app/astropage/bottom_nav_bar/bottom.dart';
 import 'package:flutter/material.dart';
 
 class GoLP extends StatefulWidget {

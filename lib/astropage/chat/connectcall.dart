@@ -15,7 +15,9 @@ class _CallConnectState extends State<CallConnect> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const SizedBox(height: 18,),
+            const SizedBox(
+              height: 18,
+            ),
             Container(
               height: MediaQuery.of(context).size.height * 0.06,
               width: MediaQuery.of(context).size.width * 0.9,
@@ -47,6 +49,8 @@ class _CallConnectState extends State<CallConnect> {
               ),
             ),
             ListView.builder(
+                physics: ScrollPhysics(),
+                scrollDirection: Axis.vertical,
                 itemCount: screen.length,
                 shrinkWrap: true,
                 itemBuilder: (context, index) => CallList(
@@ -87,33 +91,57 @@ List<Callconnect> screen = [
       date: "21 May 23,",
       time: "02:45 PM",
       duration: '30 mins',
-      subscription: 'Paid', 
-      Imageicon: ''
-    ),
+      subscription: 'Paid',
+      Imageicon: ''),
   Callconnect(
       name: 'Ankita Shalini',
       date: "21 May 23,",
       time: "02:45 PM",
       duration: '30 mins',
-      subscription: 'Free', 
-      Imageicon: ''
-    ),
+      subscription: 'Free',
+      Imageicon: ''),
   Callconnect(
       name: 'Ankita Shalini',
       date: "21 May 23,",
       time: "02:45 PM",
       duration: '30 mins',
-      subscription: 'Paid', 
-      Imageicon: ''
-    ),
+      subscription: 'Paid',
+      Imageicon: ''),
   Callconnect(
       name: 'Ankita Shalini',
       date: "21 May 23,",
       time: "02:45 PM",
       duration: '30 mins',
-      subscription: 'Paid', 
-      Imageicon: ''
-    ),
+      subscription: 'Paid',
+      Imageicon: ''),
+  Callconnect(
+      name: 'Ankita Shalini',
+      date: "21 May 23,",
+      time: "02:45 PM",
+      duration: '30 mins',
+      subscription: 'Paid',
+      Imageicon: ''),
+  Callconnect(
+      name: 'Ankita Shalini',
+      date: "21 May 23,",
+      time: "02:45 PM",
+      duration: '30 mins',
+      subscription: 'Paid',
+      Imageicon: ''),
+  Callconnect(
+      name: 'Ankita Shalini',
+      date: "21 May 23,",
+      time: "02:45 PM",
+      duration: '30 mins',
+      subscription: 'Paid',
+      Imageicon: ''),
+  Callconnect(
+      name: 'Ankita Shalini',
+      date: "21 May 23,",
+      time: "02:45 PM",
+      duration: '30 mins',
+      subscription: 'Paid',
+      Imageicon: ''),
 ];
 
 class CallList extends StatelessWidget {
@@ -138,9 +166,8 @@ class CallList extends StatelessWidget {
       child: Container(
         width: MediaQuery.of(context).size.width * 0.5,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-          color: Colors.white.withOpacity(0.1)
-        ),
+            borderRadius: BorderRadius.circular(20),
+            color: Colors.white.withOpacity(0.1)),
         child: Padding(
           padding: const EdgeInsets.all(7),
           child: Row(
@@ -217,22 +244,20 @@ class CallList extends StatelessWidget {
                           child: Row(
                             children: [
                               IconButton(
-                                padding: EdgeInsets.zero,
-                                constraints: const BoxConstraints(),
-                                onPressed: () {},
-                                icon: const Icon(
-                                  Icons.star,
-                                  color: Colors.white,
-                                  size: 15,
-                                )
-                              ),
+                                  padding: EdgeInsets.zero,
+                                  constraints: const BoxConstraints(),
+                                  onPressed: () {},
+                                  icon: const Icon(
+                                    Icons.star,
+                                    color: Colors.white,
+                                    size: 15,
+                                  )),
                               IconButton(
-                                padding: EdgeInsets.zero,
-                                constraints: const BoxConstraints(),
-                                onPressed: () {},
-                                icon: const Icon(Icons.star,
-                                color: Colors.white, size: 15)
-                              ),
+                                  padding: EdgeInsets.zero,
+                                  constraints: const BoxConstraints(),
+                                  onPressed: () {},
+                                  icon: const Icon(Icons.star,
+                                      color: Colors.white, size: 15)),
                               IconButton(
                                   padding: EdgeInsets.zero,
                                   constraints: const BoxConstraints(),

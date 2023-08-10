@@ -1,5 +1,5 @@
 import 'package:astrology_app/astropage/HomePage_astrologer/hpclass.dart';
-import 'package:astrology_app/astropage/profilepage/profileimage.dart';
+import 'package:astrology_app/astropage/earning_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 
@@ -11,8 +11,11 @@ class AstroDashBoardPage extends StatefulWidget {
 }
 
 class _AstroDashBoardPageState extends State<AstroDashBoardPage> {
-  bool online_Status = false;
+  // ignore: non_constant_identifier_names
+  bool online_status = false;
+  // ignore: non_constant_identifier_names
   bool call_status = false;
+  // ignore: non_constant_identifier_names
   bool chat_status = false;
 
   @override
@@ -20,196 +23,351 @@ class _AstroDashBoardPageState extends State<AstroDashBoardPage> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.black,
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  children: [
-                    Column(
-                      children: [
-                        Image.asset(
-                          'assets/images/astro_logo.png',
-                          height: MediaQuery.of(context).size.height * 0.18,
-                          width: MediaQuery.of(context).size.width * 0.18,
-                        ),
-                      ],
-                    ),
-                    const Spacer(),
-                    Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            IconButton(
-                              onPressed: () {},
-                              icon: const Icon(
-                                Icons.help_outline,
-                                size: 27,
-                                color: Colors.white,
-                              ),
-                            ),
-                            IconButton(
-                              onPressed: () {},
-                              icon: const Icon(
-                                Icons.notifications_outlined,
-                                size: 27,
-                                color: Colors.white,
-                              ),
-                            ),
-                            FlutterSwitch(
-                              width: MediaQuery.of(context).size.width * 0.17,
-                              height:
-                                  MediaQuery.of(context).size.height * 0.032,
-                              activeColor: Colors.white.withOpacity(0.2),
-                              inactiveToggleColor: Colors.white,
-                              inactiveColor: Colors.white.withOpacity(0.2),
-                              activeToggleColor: Colors.green,
-                              valueFontSize: 10,
-                              value: online_Status,
-                              borderRadius: 15,
-                              toggleSize: 18,
-                              activeText: 'Online',
-                              inactiveText: 'Offline',
-                              activeTextColor: Colors.white,
-                              showOnOff: true,
-                              onToggle: (sStatus) {
-                                setState(() {
-                                  online_Status = sStatus;
-                                });
-                              },
-                            ),
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            const Text(
-                              'Calls',
-                              style:
-                                  TextStyle(fontSize: 15, color: Colors.white),
-                            ),
-                            const SizedBox(
-                              width: 15,
-                            ),
-                            HPFlutterswitch(
-                              height:
-                                  MediaQuery.of(context).size.height * 0.002,
-                              width: 50,
-                              onToggle: (sStatus) {
-                                setState(
-                                  () {
-                                    call_status = sStatus;
-                                  },
-                                );
-                              },
-                              value: call_status,
-                            ),
-                          ],
-                        ),
-                        SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.01,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            const Text(
-                              'Chats',
-                              style: TextStyle(
-                                  fontSize: 15,
-                                  // fontWeight: FontWeight.bold,
-                                  color: Colors.white),
-                            ),
-                            const SizedBox(
-                              width: 10,
-                            ),
-                            HPFlutterswitch(
-                              height: 20,
-                              onToggle: (sStatus) {
-                                setState(() {
-                                  chat_status = sStatus;
-                                });
-                              },
-                              value: chat_status,
-                              width: 40,
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-              const HomeContainer(),
-              const SizedBox(
-                height: 15,
-              ),
-              SizedBox(
-                height: 45,
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => ProfileImage()));
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white.withOpacity(0.2),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                  ),
-                  child: const Text(
-                    'Boost my Profile',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              GridClass(),
-              const Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Row(
+        body: Container(
+          margin: const EdgeInsets.all(10),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        "Today's Earnings:",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 19,
-                          fontWeight: FontWeight.bold,
+                      Image.asset(
+                        'assets/images/logo.png',
+                        height: 80,
+                        width: 80,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          IconButton(
+                            onPressed: () {},
+                            icon: const Icon(
+                              Icons.help_outline,
+                              size: 27,
+                              color: Colors.white,
+                            ),
+                          ),
+                          IconButton(
+                            onPressed: () {},
+                            icon: const Icon(
+                              Icons.notifications_outlined,
+                              size: 27,
+                              color: Colors.white,
+                            ),
+                          ),
+                          FlutterSwitch(
+                            width: 60,
+                            height: 20,
+                            activeColor: Colors.white.withOpacity(0.2),
+                            inactiveToggleColor: Colors.white,
+                            inactiveColor: Colors.white.withOpacity(0.2),
+                            activeToggleColor: Colors.green,
+                            valueFontSize: 10,
+                            value: online_status,
+                            borderRadius: 15,
+                            toggleSize: 18,
+                            activeText: 'Online',
+                            inactiveText: 'Ofline',
+                            activeTextColor: Colors.white,
+                            showOnOff: true,
+                            onToggle: (sStatus) {
+                              setState(() {
+                                online_status = sStatus;
+                              });
+                            },
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          const Text(
+                            'Calls',
+                            style: TextStyle(
+                                fontSize: 15,
+                                // fontWeight: FontWeight.bold,
+                                color: Colors.white),
+                          ),
+                          const SizedBox(
+                            width: 15,
+                          ),
+                          FlutterSwitch(
+                            width: 40,
+                            height: 20,
+                            activeColor: Colors.white.withOpacity(0.2),
+                            inactiveToggleColor: Colors.white,
+                            inactiveColor: Colors.white.withOpacity(0.2),
+                            activeToggleColor: Colors.green,
+                            valueFontSize: 10,
+                            value: call_status,
+                            borderRadius: 15,
+                            toggleSize: 10.0,
+                            activeTextColor: Colors.white,
+                            showOnOff: true,
+                            onToggle: (sStatus) {
+                              setState(() {
+                                call_status = sStatus;
+                              });
+                            },
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          const Text(
+                            'Chats',
+                            style: TextStyle(
+                                fontSize: 15,
+                                // fontWeight: FontWeight.bold,
+                                color: Colors.white),
+                          ),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          FlutterSwitch(
+                            width: 40,
+                            height: 20,
+                            activeColor: Colors.white.withOpacity(0.2),
+                            inactiveToggleColor: Colors.white,
+                            inactiveColor: Colors.white.withOpacity(0.2),
+                            activeToggleColor: Colors.green,
+                            valueFontSize: 10,
+                            value: chat_status,
+                            borderRadius: 15,
+                            toggleSize: 10.0,
+                            activeTextColor: Colors.white,
+                            showOnOff: true,
+                            onToggle: (sStatus) {
+                              setState(() {
+                                chat_status = sStatus;
+                              });
+                            },
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  height: 15,
+                ),
+                HomeContainer(),
+                const SizedBox(
+                  height: 15,
+                ),
+                SizedBox(
+                  height: 45,
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const EarningPage()));
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white.withOpacity(0.2),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                    ),
+                    child: const Text(
+                      'Boost my Profile',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                GridClass(),
+                // Padding(
+                //   padding: const EdgeInsets.all(8.0),
+                //   child: GridView.builder(
+                //     gridDelegate:
+                //         const SliverGridDelegateWithFixedCrossAxisCount(
+                //       crossAxisCount: 3,
+                //       crossAxisSpacing: 20,
+                //       childAspectRatio: 0.95,
+                //     ),
+                //     itemCount: astroHome.length,
+                //     shrinkWrap: true,
+                //     physics: const NeverScrollableScrollPhysics(),
+                //     itemBuilder: (context, index) => AstroHome(
+                //       image: astroHome[index].image,
+                //       title: astroHome[index].title,
+                //     ),
+                //   ),
+                // ),
+                const SizedBox(
+                  height: 10,
+                ),
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Today's Earnings:",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 17,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                      ),
-                      SizedBox(
-                        width: 25,
-                      ),
-                      Icon(
-                        Icons.account_balance_wallet_outlined,
-                        color: Colors.white,
-                        size: 25,
-                      ),
-                      Icon(
-                        Icons.currency_rupee,
-                        color: Colors.white,
-                        size: 20,
-                      ),
-                      Text(
-                        '720',
-                        style: TextStyle(color: Colors.white, fontSize: 16),
-                      ),
-                    ]),
-              ),
-            ],
+                        SizedBox(
+                          width: 25,
+                        ),
+                        Icon(
+                          Icons.account_balance_wallet_outlined,
+                          color: Colors.white,
+                          size: 25,
+                        ),
+                        Icon(
+                          Icons.currency_rupee,
+                          color: Colors.white,
+                          size: 15,
+                        ),
+                        Text(
+                          '720',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ]),
+                ),
+              ],
+            ),
           ),
         ),
+      ),
+    );
+  }
+}
+
+class AstroHomeDetails {
+  late String image, title;
+
+  AstroHomeDetails({
+    required this.image,
+    required this.title,
+  });
+}
+
+List<AstroHomeDetails> astroHome = [
+  AstroHomeDetails(
+    image: "assets/images/call_details.png",
+    title: "Call Details",
+  ),
+  AstroHomeDetails(
+    image: "assets/images/go_live.png",
+    title: "Go live",
+  ),
+  AstroHomeDetails(
+    image: "assets/images/shortcuts.png",
+    title: "Shortcuts",
+  ),
+  AstroHomeDetails(
+    image: "assets/images/set_rate.png",
+    title: "Set Rate",
+  ),
+  AstroHomeDetails(
+    image: "assets/images/support.png",
+    title: "Support",
+  ),
+  AstroHomeDetails(
+    image: "assets/images/login_hours.png",
+    title: "Login Hours",
+  ),
+  AstroHomeDetails(
+    image: "assets/images/update.png",
+    title: "Update",
+  ),
+  AstroHomeDetails(
+    image: "assets/images/payment_report.png",
+    title: "Payment Report",
+  ),
+  AstroHomeDetails(
+    image: "assets/images/articles.png",
+    title: "Articles",
+  ),
+  AstroHomeDetails(
+    image: "assets/images/apply_leave.png",
+    title: "Apply Leave",
+  ),
+  AstroHomeDetails(
+    image: "assets/images/earnings.png",
+    title: "Earnings",
+  ),
+  AstroHomeDetails(
+    image: "assets/images/chat.png",
+    title: "Chats",
+  ),
+];
+
+class AstroHome extends StatelessWidget {
+  const AstroHome({
+    Key? key,
+    required this.image,
+    required this.title,
+  }) : super(key: key);
+
+  final String image, title;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Container(
+            height: 50,
+            width: 50,
+            padding: const EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15),
+              // color: Colors.blue[400]
+            ),
+            child: Center(
+              child: Image.asset(
+                image,
+                height: 22,
+                width: 22,
+                color: Colors.white,
+              ),
+            ),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          Flexible(
+            child: Text(
+              title,
+              style: const TextStyle(
+                  fontSize: 13,
+                  // fontWeight: FontWeight.bold,
+                  color: Colors.white),
+              textAlign: TextAlign.center,
+            ),
+          )
+        ],
       ),
     );
   }
