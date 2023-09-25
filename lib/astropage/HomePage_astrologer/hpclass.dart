@@ -7,11 +7,14 @@ import 'package:astrology_app/astropage/Go%20Live/go_live_screen.dart';
 import 'package:astrology_app/astropage/login_hour.dart';
 import 'package:astrology_app/astropage/payment_report_screen.dart';
 import 'package:astrology_app/astropage/set_rate.dart';
-import 'package:astrology_app/astropage/shortcuts_screen.dart';
-import 'package:astrology_app/astropage/support_screen.dart';
+import 'package:astrology_app/astropage/shortcuts/shortcuts_screen.dart';
+import 'package:astrology_app/astropage/support/support_screen.dart';
 import 'package:astrology_app/astropage/update_category.dart';
+import 'package:blurrycontainer/blurrycontainer.dart';
+import 'package:custom_radio_grouped_button/custom_radio_grouped_button.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
+import 'package:super_tooltip/super_tooltip.dart';
 
 class HomeContainer extends StatefulWidget {
   const HomeContainer({super.key});
@@ -394,7 +397,7 @@ class _GridClassState extends State<GridClass> {
           MaterialPageRoute(builder: (context) => const CallDetails()));
     } else if (index == 1) {
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => GoLivePage()));
+          context, MaterialPageRoute(builder: (context) => const GoLivePage()));
     } else if (index == 2) {
       Navigator.push(context,
           MaterialPageRoute(builder: (context) => const ShortcutsPage()));
@@ -403,31 +406,31 @@ class _GridClassState extends State<GridClass> {
           context, MaterialPageRoute(builder: (context) => const SetRate()));
     } else if (index == 4) {
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => SupportPage()));
+          context, MaterialPageRoute(builder: (context) => const SupportPage()));
     } else if (index == 5) {
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => LoginHour()));
+          context, MaterialPageRoute(builder: (context) => const LoginHour()));
     } else if (index == 6) {
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => UpdatePage()));
+          context, MaterialPageRoute(builder: (context) => const UpdatePage()));
     } else if (index == 7) {
       Navigator.push(context,
-          MaterialPageRoute(builder: (context) => PaymentReportPage()));
+          MaterialPageRoute(builder: (context) => const PaymentReportPage()));
     } else if (index == 8) {
       Navigator.push(
           context,
           MaterialPageRoute(
-              builder: (context) => ArticlePage(
+              builder: (context) => const ArticlePage(
                     tabname: 'submit',
                   )));
     } else if (index == 9) {
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => ApplyLeavePage()));
+          context, MaterialPageRoute(builder: (context) => const ApplyLeavePage()));
     } else if (index == 10) {
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => EarningPage()));
+          context, MaterialPageRoute(builder: (context) => const EarningPage()));
     } else if (index == 11) {
-      Navigator.push(context, MaterialPageRoute(builder: (context) => Chat()));
+      Navigator.push(context, MaterialPageRoute(builder: (context) => const Chat()));
     }
   }
 }
@@ -534,6 +537,378 @@ class AstroHome extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
           )
+        ],
+      ),
+    );
+  }
+}
+
+//----------------pop up design =- Boost My Profile --------------------
+class BoostMyProfile extends StatelessWidget {
+  const BoostMyProfile({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: BlurryContainer(
+        color: Colors.white.withOpacity(0.15),
+        blur: 3,
+        elevation: 10,
+        height: MediaQuery.of(context).size.height * 0.35,
+        width: MediaQuery.of(context).size.width * 0.9,
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: const Icon(
+                      Icons.close,
+                      color: Colors.white,
+                      size: 30,
+                    ))
+              ],
+            ),
+            Text(
+              'Boost My Profile',
+              style: TextStyle(
+                  color: Colors.white.withOpacity(0.7),
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Text(
+              'You will be featured in JyotishBani and your\npercentage will go down by (10%).\nDo you want to proceed?',
+              style: TextStyle(
+                  color: Colors.white.withOpacity(0.7),
+                  fontSize: 15,
+                  fontWeight: FontWeight.w400),
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                CustomRadioButton(
+                  elevation: 0,
+                  absoluteZeroSpacing: false,
+                  spacing: 5,
+                  unSelectedColor: Colors.grey.withOpacity(0.3),
+                  selectedBorderColor: Colors.blue,
+                  unSelectedBorderColor: Colors.blue,
+                  height: 55,
+                  width: MediaQuery.of(context).size.width * 0.37,
+                  shapeRadius: 10,
+                  enableShape: true,
+                  radius: 10,
+                  buttonLables: const [
+                    'NO',
+                    'YES',
+                  ],
+                  buttonValues: const [
+                    "NO",
+                    "YES",
+                  ],
+                  buttonTextStyle: const ButtonTextStyle(
+                      selectedColor: Colors.white,
+                      unSelectedColor: Colors.white,
+                      textStyle:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.w400)),
+                  radioButtonValue: (value) {
+                    //print(value);
+                  },
+                  selectedColor: Theme.of(context).colorScheme.secondary,
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+//------------------Notification Change -----------
+class NotificationAstro extends StatelessWidget {
+  const NotificationAstro({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: BlurryContainer(
+          color: Colors.white.withOpacity(0.15),
+          blur: 3,
+          elevation: 10,
+          height: MediaQuery.of(context).size.height * 0.001,
+          width: MediaQuery.of(context).size.width * 0.2,
+          child: ListView.builder(
+               itemCount: ding.length,
+              itemBuilder: (context, index) => ListNotification(
+                    heading: ding[index].heading,
+                    description: ding[index].description,
+                  ))),
+    );
+  }
+}
+
+class AstroNotification {
+  late String heading;
+  late String description;
+
+  AstroNotification({
+    required this.heading,
+    required this.description,
+  });
+}
+
+List<AstroNotification> ding = [
+  AstroNotification(
+      heading: 'Venus Rises in Cancer - impact?',
+      description: 'This Phenomenon will bring major changes in...'),
+  AstroNotification(
+      heading: 'Venus Rises in Cancer - impact?',
+      description: 'This Phenomenon will bring major changes in...'),
+  AstroNotification(
+      heading: 'Venus Rises in Cancer - impact?',
+      description: 'This Phenomenon will bring major changes in...'),
+  AstroNotification(
+      heading: 'Venus Rises in Cancer - impact?',
+      description: 'This Phenomenon will bring major changes in...'),
+];
+
+class ListNotification extends StatelessWidget {
+  const ListNotification({
+    super.key,
+    required this.heading,
+    required this.description,
+  });
+  final String heading, description;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: MediaQuery.of(context).size.height * 0.08,
+      width: MediaQuery.of(context).size.width * 0.95,
+      child: Column(
+        children: [
+          Row(
+            children: [
+              Column(
+                children: [
+                  Text(
+                    heading,
+                    style: const TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 10),
+                  ),
+                  Text(
+                    description,
+                    style: const TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w100,
+                        fontSize: 10),
+                  )
+                ],
+              )
+            ],
+          ),
+          const Divider(
+            height: 2,
+            color: Colors.white,
+            indent: 1,
+          )
+        ],
+      ),
+    );
+  }
+}
+  //----------------------Notification------------------------------------
+
+class NotificationItem {
+  final String title;
+  final String description;
+
+  NotificationItem(this.title, this.description);
+}
+
+class NotificationBell extends StatefulWidget {
+  const NotificationBell({Key? key}) : super(key: key);
+
+  @override
+  // ignore: library_private_types_in_public_api
+  _NotificationBellState createState() => _NotificationBellState();
+}
+
+class _NotificationBellState extends State<NotificationBell> {
+  bool showNotificationContainer = false;
+  bool notificationsViewed = false;
+  SuperTooltipController tooltipController = SuperTooltipController();
+
+  List<NotificationItem> notifications = [
+    NotificationItem(
+      'Venus Rises in Cancer - Impact?',
+      'This phenomenon will bring major changes in...',
+    ),
+        NotificationItem(
+     'Venus Rises in Cancer - Impact?',
+      'This phenomenon will bring major changes in...',
+      ),
+     NotificationItem(
+     'Venus Rises in Cancer - Impact?',
+      'This phenomenon will bring major changes in...',
+    ),
+    NotificationItem(
+     'Venus Rises in Cancer - Impact?',
+      'This phenomenon will bring major changes in...',
+     ),
+    NotificationItem(
+     'Venus Rises in Cancer - Impact?',
+      'This phenomenon will bring major changes in...',
+     ),
+
+    
+  ];
+
+  void toggleNotificationContainer() {
+    setState(() {
+      showNotificationContainer = !showNotificationContainer;
+      if (showNotificationContainer) {
+        notificationsViewed = true;
+      }
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.transparent,
+      body: Stack(
+        children: [
+          Positioned(
+            top: 30,
+            right: 150,
+            child: Row(
+              children: [
+                Stack(
+                  alignment: Alignment.topLeft,
+                  children: [
+                    IconButton(
+                      onPressed: toggleNotificationContainer,
+                      icon: const Icon(
+                        Icons.notifications_none_outlined,
+                        color: Colors.white,
+                        size: 30,
+                      ),
+                    ),
+                    if (!notificationsViewed)
+                      Positioned(
+                        right: 15,
+                        top: 14,
+                        child: Container(
+                          width: 10,
+                          height: 10,
+                          decoration: const BoxDecoration(
+                            color: Colors.red,
+                            shape: BoxShape.circle,
+                          ),
+                        ),
+                      ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          if (showNotificationContainer)
+            Positioned(
+              top: 11,
+              left: 40,
+              right: 0,
+              bottom: 740,
+              child: SuperTooltip(
+                left: 40,
+                right: 50,
+                arrowTipDistance: 5.0,
+                arrowBaseWidth: 20.0,
+                arrowLength: 18.0,
+                showBarrier: true,
+                borderColor: Colors.grey.shade500,
+                popupDirection: TooltipDirection.down,
+                controller: tooltipController,
+                touchThroughAreaShape: ClipAreaShape.rectangle,
+                touchThroughAreaCornerRadius: 50,
+                barrierColor: Colors.transparent,
+                backgroundColor: Colors.white.withOpacity(0.15),
+                content: SizedBox(
+                  height: 310,
+                  child: ListView.builder(
+                    itemCount: notifications.length,
+                    itemBuilder: (context, index) {
+                      return Column(
+                        children: [
+                          SizedBox(
+                            height: 50,
+                            child: Row(
+                              children: [
+                                 Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 5, bottom: 8, left: 15),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        notifications[index].title,
+                                        style: const TextStyle(
+                                          fontSize: 16,
+                                          color: Colors.white54,
+                                          fontWeight: FontWeight.w400,
+                                        ),
+                                      ),
+                                      Text(
+                                        notifications[index].description,
+                                        style: const TextStyle(
+                                          fontSize: 12,
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w100,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Expanded(
+                                  child: IconButton(
+                                    onPressed: () {},
+                                    icon: const Icon(
+                                      Icons.arrow_drop_down,
+                                    ),
+                                    color: Colors.grey,
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                          Divider(
+                            color: Colors.grey.shade700,
+                            height: 10,
+                            thickness: 2,
+                          ),
+                                  
+                                  
+                        ],
+                      );
+                    },
+                  ),
+                ),
+              ),
+            ),
         ],
       ),
     );

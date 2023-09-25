@@ -4,6 +4,7 @@ import 'package:astrology_app/astropage/HomePage_astrologer/dashboard_screen.dar
 import 'package:astrology_app/astropage/chat/connect_page.dart';
 import 'package:astrology_app/astropage/payment_report_screen.dart';
 import 'package:astrology_app/astropage/profilepage/profileimage.dart';
+import 'package:blurrycontainer/blurrycontainer.dart';
 import 'package:flutter/material.dart';
 
 class CustomBottomNavigationBar extends StatefulWidget {
@@ -16,6 +17,7 @@ class CustomBottomNavigationBar extends StatefulWidget {
 
 class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
   int _currentIndex = 0;
+  bool onclick = false;
 
   @override
   Widget build(BuildContext context) {
@@ -39,11 +41,24 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
             ],
           ),
           child: FloatingActionButton(
-            child: const Icon(
-              Icons.add_circle_outline_outlined,
+            child: Icon(
+              onclick
+                  ? Icons.cancel_outlined
+                  : Icons.add_circle_outline_outlined,
               size: 30,
             ),
-            onPressed: () {},
+            //tooltip:  ,
+            onPressed: () {
+              setState(() {
+                onclick = !onclick;
+                if (onclick = true){
+                  
+                }
+              });
+              showDialog(
+                  context: context,
+                  builder: (BuildContext context) => const AddStory());
+            },
           ),
         ),
       ),
@@ -225,6 +240,69 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
     ];
     return SizedBox(
       child: Center(child: pagesData.elementAt(_currentIndex)),
+    );
+  }
+}
+
+class AddStory extends StatefulWidget {
+  const AddStory({super.key});
+
+  @override
+  State<AddStory> createState() => _AddStoryState();
+}
+
+class _AddStoryState extends State<AddStory> {
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 135),
+      child: Align(
+        alignment: Alignment.bottomCenter,
+        child: BlurryContainer(
+          color: Colors.white.withOpacity(0.1),
+          blur: 3,
+          elevation: 10,
+          height: MediaQuery.of(context).size.height * 0.172,
+          width: MediaQuery.of(context).size.width * 0.35,
+          child: Column(
+            children: [
+              const Text(
+                'Add a story',
+                style: TextStyle(
+                    color: Colors.blue,
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold),
+              ),
+              Row(
+                children: [
+                  IconButton(
+                    onPressed: () {},
+                    icon: const Icon(Icons.videocam_rounded),
+                    color: Colors.white,
+                  ),
+                  const Text(
+                    'Video',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ],
+              ),
+              Row(
+                children: [
+                  IconButton(
+                    onPressed: () {},
+                    icon: const Icon(Icons.image_outlined),
+                    color: Colors.white,
+                  ),
+                  const Text(
+                    'Photo',
+                    style: TextStyle(color: Colors.white),
+                  )
+                ],
+              )
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

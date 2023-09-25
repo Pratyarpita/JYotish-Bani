@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 
 class Service {
   static Future<dynamic> astroLogin(String email, String password) async {
-    const apiUrl = "/sign-in";
+    const apiUrl = "/astrologer/sign-in";
 
     final Map<String, String> headers = {
       'Content-Type': 'application/json',
@@ -29,7 +29,7 @@ class Service {
   }
 
   static Future<List<dynamic>> getShortcutOfUser() async {
-    const apiUrl = "/shortcuts";
+    const apiUrl = "/astrologer/shortcuts";
     final Map<String, String> headers = {
       'Authorization': 'Bearer ${Constants.getToken()}',
       'Content-Type': 'application/json',
@@ -49,7 +49,7 @@ class Service {
 
   static Future<String> createLeave(
       String fromDate, String toDate, String reason) async {
-    const apiUrl = "/createLeave";
+    const apiUrl = "/astrologer/createLeave";
     final Map<String, String> headers = {
       'Authorization':
           'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhbWVzMzI0QGdtYWlsLmNvbSIsImlkIjoxMDUsImlhdCI6MTY4ODk3MDM4MSwiZXhwIjoxNjg5MTQzMTgxfQ.4TDvBprJUnfqbWzpjv9HM9E0psbc-ys9U511rP4V9vw',
@@ -76,7 +76,7 @@ class Service {
   }
 
   static Future<dynamic> fetchProfileData() async {
-    const apiUrl = "/profile";
+    const apiUrl = "/astrologer/profile";
 
     final Map<String, String> headers = {
       'Authorization':
@@ -99,7 +99,7 @@ class Service {
 
   static Future<dynamic> updateLoginHour(
       String fromdate, String endDate) async {
-    final apiUrl = '/loginhours';
+    const apiUrl = '/astrologer/loginhours';
 
     final Map<String, String> headers = {
       'Authorization':
@@ -127,7 +127,7 @@ class Service {
   }
 
   static Future<dynamic> getTotalLoginHour() async {
-    final apiUrl = '/getloginhours';
+    const apiUrl = '/astrologer/getloginhours';
 
     final Map<String, String> headers = {
       'Authorization':
@@ -153,11 +153,11 @@ class Service {
   }
 
   static Future<dynamic> getLoginHourSummary() async {
-    final apiUrl = '/get-login-hours';
+   const apiUrl = '/get-login-hours';
   }
 
   static Future<dynamic> getEarning() async {
-    const apiUrl = '/affleate';
+    const apiUrl = '/astrologer/affleate';
 
     final Map<String, String> headers = {
       'Authorization':
@@ -188,7 +188,7 @@ class Service {
   }
 
   static Future<dynamic> submitArticle(String title, String description) async {
-    const apiUrl = "/submit";
+    const apiUrl = "/astrologer/submit";
 
     final Map<String, String> headers = {
       'Authorization':
@@ -213,7 +213,7 @@ class Service {
 
   static Future<dynamic> saveasDraftArticle(
       String title, String description) async {
-    const apiUrl = "/save-draft";
+    const apiUrl = "/astrologer/save-draft";
 
     final Map<String, String> headers = {
       'Authorization':
@@ -237,7 +237,7 @@ class Service {
   }
 
   static Future<dynamic> deleteDraftArticle(String id) async {
-    const apiUrl = "/delete-draft";
+    const apiUrl = "/astrologer/delete-draft";
 
     final Map<String, String> headers = {
       'Authorization':
@@ -262,7 +262,7 @@ class Service {
 
   static Future<dynamic> updateDraft(
       String id, String title, String description) async {
-    const apiUrl = "/update-draft";
+    const apiUrl = "/astrologer/update-draft";
 
     final Map<String, String> headers = {
       'Authorization':

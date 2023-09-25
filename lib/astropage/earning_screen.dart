@@ -326,83 +326,75 @@ class _EarningPageState extends State<EarningPage> {
             const SizedBox(
               height: 20,
             ),
-            GestureDetector(
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const PaymentReportPage()));
-              },
-              child: SizedBox(
-                child: Column(
-                  children: [
-                    Container(
-                      height: MediaQuery.of(context).size.height * 0.13,
-                      width: MediaQuery.of(context).size.width * 0.99,
-                      decoration: BoxDecoration(
-                          color: const Color.fromARGB(255, 127, 133, 234),
-                          borderRadius: BorderRadius.circular(15)),
-                      child: const Row(
-                        // mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.only(top: 25, left: 25),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  children: [
-                                    Text(
-                                      'My Service Earning',
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 20,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                    Icon(
-                                      Icons.keyboard_arrow_right,
-                                      size: 25,
-                                    )
-                                  ],
-                                ),
-                                SizedBox(
-                                  height: 5,
-                                ),
-                                Text(
-                                  'This Month',
-                                  style: TextStyle(
-                                    fontSize: 15,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(
-                            width: 70,
-                          ),
-                          Row(
+            SizedBox(
+              child: Column(
+                children: [
+                  Container(
+                    height: MediaQuery.of(context).size.height * 0.13,
+                    width: MediaQuery.of(context).size.width * 0.99,
+                    decoration: BoxDecoration(
+                        color: const Color.fromARGB(255, 127, 133, 234),
+                        borderRadius: BorderRadius.circular(15)),
+                    child: const Row(
+                      // mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(top: 25, left: 25),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Icon(
-                                Icons.currency_rupee,
-                                size: 17,
+                              Row(
+                                children: [
+                                  Text(
+                                    'My Service Earning',
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  Icon(
+                                    Icons.keyboard_arrow_right,
+                                    size: 25,
+                                  )
+                                ],
                               ),
                               SizedBox(
-                                width: 3,
+                                height: 5,
                               ),
                               Text(
-                                '0',
+                                'This Month',
                                 style: TextStyle(
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.bold,
+                                  fontSize: 15,
                                 ),
                               ),
                             ],
-                          )
-                        ],
-                      ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 70,
+                        ),
+                        Row(
+                          children: [
+                            Icon(
+                              Icons.currency_rupee,
+                              size: 17,
+                            ),
+                            SizedBox(
+                              width: 3,
+                            ),
+                            Text(
+                              '0',
+                              style: TextStyle(
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        )
+                      ],
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           ]),

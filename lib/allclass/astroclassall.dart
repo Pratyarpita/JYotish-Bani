@@ -1,4 +1,3 @@
-import 'package:astrology_app/astropage/HomePage_astrologer/dashboard_screen.dart';
 import 'package:astrology_app/astropage/bottom_nav_bar/bottom.dart';
 import 'package:flutter/material.dart';
 
@@ -52,7 +51,10 @@ class _HeadLineState extends State<HeadLine> {
       children: [
         IconButton(
           onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => CustomBottomNavigationBar()));
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const CustomBottomNavigationBar()));
           },
           icon: const Icon(
             Icons.arrow_back_ios_sharp,
@@ -132,8 +134,8 @@ class _ChatDurationPagStateState extends State<ChatDurationPagState> {
             padding: const EdgeInsets.only(top: 10, bottom: 10),
             child: Column(
               children: [
-                Row(
-                  children: const [
+                const Row(
+                  children: [
                     Text(
                       'Chat Duration: 04:00 Min',
                       style: TextStyle(
@@ -173,8 +175,8 @@ class _ChatDurationPagStateState extends State<ChatDurationPagState> {
                     ),
                   ],
                 ),
-                Row(
-                  children: const [
+                const Row(
+                  children: [
                     Text(
                       'Free  Seconds',
                       style: TextStyle(
@@ -197,8 +199,8 @@ class _ChatDurationPagStateState extends State<ChatDurationPagState> {
                 const SizedBox(
                   height: 10,
                 ),
-                Row(
-                  children: const [
+                const Row(
+                  children: [
                     Text(
                       'Cousnltation Date & Time: 28-03-2023,0:48',
                       style: TextStyle(
@@ -213,10 +215,10 @@ class _ChatDurationPagStateState extends State<ChatDurationPagState> {
                 ),
                 Row(
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
+                        children: [
                           Text(
                             'Free Session',
                             style: TextStyle(
@@ -352,8 +354,8 @@ class _DurationPState extends State<DurationP> {
   @override
   Widget build(BuildContext context) {
     return Column(children: [
-      Row(
-        children: const [
+      const Row(
+        children: [
           Text(
             'Chat Duration: 04:00 Min',
             style: TextStyle(
@@ -394,8 +396,8 @@ class _DurationPState extends State<DurationP> {
       const SizedBox(
         height: 10,
       ),
-      Row(
-        children: const [
+      const Row(
+        children: [
           Text(
             'Free  Seconds',
             style: TextStyle(
@@ -418,8 +420,8 @@ class _DurationPState extends State<DurationP> {
       const SizedBox(
         height: 10,
       ),
-      Row(
-        children: const [
+      const Row(
+        children: [
           Text(
             'Cousnltation Date & Time: 28-03-2023,0:48',
             style: TextStyle(
@@ -434,10 +436,10 @@ class _DurationPState extends State<DurationP> {
       ),
       Row(
         children: [
-          SizedBox(
+          const SizedBox(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
+              children: [
                 Text(
                   'Free Session',
                   style: TextStyle(
@@ -492,12 +494,10 @@ class _LogPState extends State<LogP> {
           widget.text,
           style: const TextStyle(fontSize: 15, color: Colors.white),
         ),
-        const SizedBox(
-          height: 10,
-        ),
         SizedBox(
           height: 50,
           child: TextField(
+            keyboardType: TextInputType.emailAddress,
             controller: widget.controller,
             style: const TextStyle(color: Colors.white),
             decoration: InputDecoration(

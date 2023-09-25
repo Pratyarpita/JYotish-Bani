@@ -95,8 +95,6 @@ class _CalenderListState extends State<CalenderList> {
         child: InkWell(
           onTap: () {},
           child: TextField(
-            // controller: _dateFormController,
-            // enabled: false,
             style: const TextStyle(color: Colors.white),
             decoration: InputDecoration(
               suffixIcon: IconButton(

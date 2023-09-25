@@ -129,7 +129,7 @@ class _EditPostState extends State<EditPost> {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => ArticlePage(tabname: 'submit',)));
+                                          builder: (context) => const ArticlePage(tabname: 'submit',)));
                                 },
                                 child: const Text(
                                   "Update Post",

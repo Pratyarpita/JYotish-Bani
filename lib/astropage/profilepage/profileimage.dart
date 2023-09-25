@@ -132,7 +132,7 @@ class _ProfileImageState extends State<ProfileImage> {
                           ),
                           Text(
                             name,
-                            style: TextStyle(color: Colors.white, fontSize: 16),
+                            style: const TextStyle(color: Colors.white, fontSize: 16),
                           ),
                           const SizedBox(
                             height: 5,
@@ -210,7 +210,7 @@ class _ProfileImageState extends State<ProfileImage> {
                     ),
                     child: Column(
                       children: [
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                         Row(
@@ -248,13 +248,13 @@ class _ProfileImageState extends State<ProfileImage> {
                           height: 20,
                         ),
                         Padding(
-                          padding: EdgeInsets.only(left: 10),
+                          padding: const EdgeInsets.only(left: 10),
                           child: Column(
                             children: [
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
-                                  Text(
+                                  const Text(
                                     'Bio',
                                     style: TextStyle(
                                       fontSize: 18,
@@ -274,7 +274,7 @@ class _ProfileImageState extends State<ProfileImage> {
                               // SizedBox(
                               //   height: 10,
                               // ),
-                              Text(
+                              const Text(
                                 'I am a professor and have more 20 years of exprerience in Vedic Astrology and Prashana. I can speak multiple language of Hindi, English and Odia. I will answer al your questions.',
                                 style: TextStyle(
                                   color: Colors.white,
@@ -286,7 +286,7 @@ class _ProfileImageState extends State<ProfileImage> {
                         ),
                         SizedBox(
                           height: MediaQuery.of(context).size.height,
-                          child: TabBarScreen(),
+                          child: const TabBarScreen(),
                         )
                       ],
                     ),

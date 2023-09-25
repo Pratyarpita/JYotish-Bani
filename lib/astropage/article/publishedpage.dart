@@ -65,7 +65,7 @@ class _Publishedpage1State extends State<Publishedpage1> {
             child: FloatingActionButton(
               onPressed: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => CreatePost()));
+                    MaterialPageRoute(builder: (context) => const CreatePost()));
               },
               child: Icon(
                 Icons.add,

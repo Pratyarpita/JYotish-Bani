@@ -200,7 +200,7 @@ class _UpdateDraftState extends State<UpdateDraft> {
                                       deleteDraft().then((value) => Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                              builder: (context) => ArticlePage(
+                                              builder: (context) => const ArticlePage(
                                                   tabname: "draft"))));
                                     },
                                     child: const Text(

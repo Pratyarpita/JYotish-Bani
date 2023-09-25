@@ -108,7 +108,7 @@ class _UpdatePageState extends State<UpdatePage> {
                                   _careerClicked = !_careerClicked;
                                 });
                               },
-                              child: Align(
+                              child: const Align(
                                 alignment: Alignment.centerLeft,
                                 child: Text(
                                   "Love",
@@ -146,13 +146,13 @@ class _UpdatePageState extends State<UpdatePage> {
             height: 15,
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 15, right: 15),
+            padding: const EdgeInsets.only(left: 5, right: 15),
             child: _vedicClicked
                 ? Align(
                     alignment: Alignment.centerRight,
                     child: Container(
                       height: MediaQuery.of(context).size.height * 0.15,
-                      width: MediaQuery.of(context).size.width * 0.40,
+                      width: MediaQuery.of(context).size.width * 0.4,
                       decoration: BoxDecoration(
                         color: Colors.white.withOpacity(0.2),
                         borderRadius: BorderRadius.circular(15),
@@ -193,7 +193,7 @@ class _UpdatePageState extends State<UpdatePage> {
                                     style: TextStyle(
                                         color:
                                             Color.fromARGB(255, 117, 116, 116),
-                                        fontSize: 15),
+                                        fontSize: 14),
                                   )),
                             ),
                             const SizedBox(height: 5),

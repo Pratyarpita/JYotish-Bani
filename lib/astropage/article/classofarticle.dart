@@ -30,8 +30,10 @@ class SubmittedTab1 extends StatelessWidget {
             width: MediaQuery.of(context).size.width * 0.11,
             child: FloatingActionButton(
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => CreatePost()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const CreatePost()));
               },
               child: Icon(
                 Icons.add,
@@ -54,8 +56,8 @@ class ArticleList {
 List<ArticleList> picture = [
   ArticleList(bgimage: 'assets/images/cont1.jpg'),
   ArticleList(bgimage: 'assets/images/cont2.jpg'),
-  // ArticleList(bgimage: 'assets/images/cont3.jpg'),
-  //ArticleList(bgimage: 'assets/images/cont4.jpg'),
+  ArticleList(bgimage: 'assets/images/cont3.jpg'),
+  ArticleList(bgimage: 'assets/images/cont4.jpg'),
 ];
 
 class ArticleClassList extends StatelessWidget {
@@ -137,7 +139,8 @@ class ArticleClassList extends StatelessWidget {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: ((context) => EditPost())));
+                                          builder: ((context) =>
+                                              const EditPost())));
                                 },
                                 icon: const Icon(
                                   Icons.edit,
@@ -307,6 +310,7 @@ class PublishedTabList extends StatelessWidget {
       ),
     );
   }
+
   Widget buildBlur({
     required Widget child,
     double sigmaX = 5,
@@ -350,7 +354,7 @@ class DraftTab extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                           builder: (context) =>
-                              ArticlePage(tabname: "publish")));
+                              const ArticlePage(tabname: "publish")));
                 },
                 child: SizedBox(
                   height: MediaQuery.of(context).size.height * 0.06,
@@ -453,7 +457,8 @@ class DraftClassList extends StatelessWidget {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: ((context) => UpdateDraft())));
+                                        builder: ((context) =>
+                                            const UpdateDraft())));
                               },
                               icon: const Icon(
                                 Icons.edit,
@@ -476,6 +481,7 @@ class DraftClassList extends StatelessWidget {
       ),
     );
   }
+
   Widget buildBlur({
     required Widget child,
     double sigmaX = 5,
@@ -500,211 +506,212 @@ class NewTab1 extends StatefulWidget {
 }
 
 class _NewTab1State extends State<NewTab1> {
-  //static bool _previewClicked = false;
-  // static bool _publishClicked = false;
-  // int _currentScreenIndex = 0;
+  static bool _previewClicked = false;
+  static bool _publishClicked = false;
+  int _currentScreenIndex = 0;
 
-  // void _changeScreen(int index) {
-  //   setState(() {
-  //     _currentScreenIndex = index;
-  //   });
-  // }
+  final TextEditingController titleController = TextEditingController();
+  final TextEditingController categoryController = TextEditingController();
+  final TextEditingController tagsController = TextEditingController();
+  final TextEditingController newwritearticleController =
+      TextEditingController();
+  final TextEditingController fromController = TextEditingController();
+
+  void _changeScreen(int index) {
+    setState(() {
+      _currentScreenIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Padding(
-        padding: const EdgeInsets.only(right: 15, left: 15),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const SizedBox(
-              height: 20,
-            ),
-            Container(
-                height: MediaQuery.of(context).size.height * 0.36,
-                width: MediaQuery.of(context).size.width * 0.9,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(8)),
-                child: Stack(
-                  children: [
-                    Positioned(
-                      top: 227,
-                      left: 0,
-                      child: Container(
-                        height: MediaQuery.of(context).size.height * 0.06,
-                        width: MediaQuery.of(context).size.width * 0.9,
-                        color: Colors.black.withOpacity(0.3),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            // Image.asset(
-                            //   'assets/icons/articleicon.jpg',
-                            // ),
-                            Align(
-                              alignment: Alignment.bottomCenter,
-                              child: SizedBox(
-                                height:
-                                    MediaQuery.of(context).size.height * 0.06,
-                                width: MediaQuery.of(context).size.width * 0.09,
-                                child: FloatingActionButton(
-                                  onPressed: () {},
-                                  backgroundColor: Colors.white,
-                                  child: Icon(
-                                    Icons.add,
-                                    color: Colors.black.withOpacity(0.6),
-                                  ),
+    return Padding(
+      padding: const EdgeInsets.only(right: 15, left: 15),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const SizedBox(
+            height: 20,
+          ),
+          Container(
+              height: MediaQuery.of(context).size.height * 0.36,
+              width: MediaQuery.of(context).size.width * 0.9,
+              decoration: BoxDecoration(
+                  color: Colors.white, borderRadius: BorderRadius.circular(8)),
+              child: Stack(
+                children: [
+                  Positioned(
+                    top: 227,
+                    left: 0,
+                    child: Container(
+                      height: MediaQuery.of(context).size.height * 0.06,
+                      width: MediaQuery.of(context).size.width * 0.9,
+                      color: Colors.black.withOpacity(0.3),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          // Image.asset(
+                          //   'assets/icons/articleicon.jpg',
+                          // ),
+                          Align(
+                            alignment: Alignment.bottomCenter,
+                            child: SizedBox(
+                              height: MediaQuery.of(context).size.height * 0.06,
+                              width: MediaQuery.of(context).size.width * 0.09,
+                              child: FloatingActionButton(
+                                onPressed: () {},
+                                backgroundColor: Colors.white,
+                                child: Icon(
+                                  Icons.add,
+                                  color: Colors.black.withOpacity(0.6),
                                 ),
                               ),
                             ),
-                            SizedBox(
-                              width: MediaQuery.of(context).size.width * 0.02,
-                            ),
-                            const Text(
-                              "Add Image",
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 17),
-                            )
-                          ],
-                        ),
+                          ),
+                          SizedBox(
+                            width: MediaQuery.of(context).size.width * 0.02,
+                          ),
+                          const Text(
+                            "Add Image",
+                            style: TextStyle(color: Colors.white, fontSize: 17),
+                          )
+                        ],
                       ),
                     ),
-                  ],
-                )),
-            const SizedBox(
-              height: 20,
-            ),
-            const Text(
-              'Title',
-              style: TextStyle(color: Colors.white, fontSize: 15),
-            ),
-            const SizedBox(height: 10),
-            const NewArticleContainer(
-                //controller: '', hint: TextStyle(),
+                  ),
+                ],
+              )),
+          const SizedBox(
+            height: 20,
+          ),
+          const Text(
+            'Title',
+            style: TextStyle(color: Colors.white, fontSize: 15),
+          ),
+          const SizedBox(height: 10),
+          NewArticleContainer(
+            controller: titleController,
+          ),
+          const SizedBox(height: 10),
+          const Text(
+            'Category',
+            style: TextStyle(color: Colors.white, fontSize: 15),
+          ),
+          const SizedBox(height: 10),
+          NewArticleContainer(
+            controller: categoryController,
+          ),
+          const SizedBox(height: 10),
+          const Text(
+            'Tags',
+            style: TextStyle(color: Colors.white, fontSize: 15),
+          ),
+          const SizedBox(height: 10),
+          NewArticleContainer(
+            controller: tagsController,
+          ),
+          //SizedBox(height: 10),
+          Row(
+            children: [
+              Text(
+                'Suggested Tags: ',
+                style: TextStyle(
+                    color: Colors.white.withOpacity(0.6), fontSize: 13),
+              ),
+              const SizedBox(
+                width: 10,
+              ),
+              //TagList(),
+            ],
+          ),
+          const SizedBox(height: 10),
+          Container(
+            height: MediaQuery.of(context).size.height * 0.40,
+            width: MediaQuery.of(context).size.width,
+            decoration: BoxDecoration(
+                color: Colors.white.withOpacity(0.2),
+                borderRadius: BorderRadius.circular(15)),
+            child: Padding(
+              padding: EdgeInsets.only(left: 10, top: 10),
+              child: TextField(
+                controller: newwritearticleController,
+                style: TextStyle(color: Colors.white),
+                textInputAction: TextInputAction.newline,
+                maxLines: 5,
+                decoration: InputDecoration(
+                  hintMaxLines: 8,
+                  border: InputBorder.none,
+                  hintText: 'Write Your Article Here',
+                  hintStyle: TextStyle(
+                    color: Colors.white,
+                    fontSize: 17,
+                  ),
                 ),
-            const SizedBox(height: 10),
-            const Text(
-              'Category',
-              style: TextStyle(color: Colors.white, fontSize: 15),
+              ),
             ),
-            const SizedBox(height: 10),
-            const NewArticleContainer(
-                // controller: null,
-                ),
-            const SizedBox(height: 10),
-            const Text(
-              'Tags',
-              style: TextStyle(color: Colors.white, fontSize: 15),
-            ),
-            const SizedBox(height: 10),
-            const NewArticleContainer(
-                //controller: null,
-                ),
-            //SizedBox(height: 10),
-            Row(
+          ),
+          const SizedBox(height: 10),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
               children: [
-                Text(
-                  'Suggested Tags: ',
-                  style: TextStyle(
-                      color: Colors.white.withOpacity(0.6), fontSize: 13),
-                ),
-                const SizedBox(
-                  width: 10,
-                ),
-                //TagList(),
-              ],
-            ),
-            const SizedBox(height: 10),
-            Container(
-              height: MediaQuery.of(context).size.height * 0.40,
-              width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.2),
-                  borderRadius: BorderRadius.circular(15)),
-              child: const Padding(
-                padding: EdgeInsets.only(left: 10, top: 10),
-                child: TextField(
-                  //controller: _descriptionController,
-                  style: TextStyle(color: Colors.white),
-                  textInputAction: TextInputAction.newline,
-                  maxLines: 5,
-                  decoration: InputDecoration(
-                    hintMaxLines: 8,
-                    border: InputBorder.none,
-                    hintText: 'Write Your Article Here',
-                    hintStyle: TextStyle(
-                      color: Colors.white,
-                      fontSize: 17,
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.06,
+                  width: MediaQuery.of(context).size.width * 0.4,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        side: const BorderSide(color: Colors.blue, width: 2),
+                        backgroundColor: Colors.white.withOpacity(0.2),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10))),
+                    onPressed: () {
+                      String from = fromController.toString();
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: ((context) => NewPublish())));
+                      _changeScreen(0);
+                      setState(() {
+                        _previewClicked = !_publishClicked;
+                      });
+                    },
+                    child: const Text(
+                      "Preview",
+                      style: TextStyle(fontSize: 18),
                     ),
                   ),
                 ),
-              ),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.07,
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.06,
+                  width: MediaQuery.of(context).size.width * 0.4,
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          side: const BorderSide(color: Colors.blue, width: 2),
+                          backgroundColor: Colors.white.withOpacity(0.2),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10))),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: ((context) => NewPublish())));
+                        _changeScreen(1);
+                      },
+                      child: const Text(
+                        "Publish",
+                        style: TextStyle(fontSize: 18),
+                      )),
+                ),
+              ],
             ),
-            const SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                children: [
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.06,
-                    width: MediaQuery.of(context).size.width * 0.4,
-                    child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                            side:
-                                const BorderSide(color: Colors.blue, width: 2),
-                            backgroundColor: Colors.white.withOpacity(0.2),
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10))),
-                        onPressed: () {
-                          //String from = fromController.toString();
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: ((context) => NewPublish())));
-                          //_changeScreen(0);
-                          // setState(() {
-                          //   _previewClicked = !_publishClicked;
-                          // });
-                        },
-                        child: const Text(
-                          "Preview",
-                          style: TextStyle(fontSize: 18),
-                        )),
-                  ),
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.07,
-                  ),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.06,
-                    width: MediaQuery.of(context).size.width * 0.4,
-                    child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                            side:
-                                const BorderSide(color: Colors.blue, width: 2),
-                            backgroundColor: Colors.white.withOpacity(0.2),
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10))),
-                        onPressed: () {
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: ((context) => Page2())));
-                          //_changeScreen(1);
-                        },
-                        child: const Text(
-                          "Publish",
-                          style: TextStyle(fontSize: 18),
-                        )),
-                  ),
-                ],
-              ),
-            ),
-            // _currentScreenIndex == 0
-            //     ? NewPublish() // Replace with your first screen content widget
-            //     : Page2(),
-          ],
-        ),
+          ),
+          _currentScreenIndex == 0
+              ? NewPublish() // Replace with your first screen content widget
+              : NewPublish(),
+        ],
       ),
     );
   }
@@ -714,9 +721,10 @@ class _NewTab1State extends State<NewTab1> {
 class NewArticleContainer extends StatefulWidget {
   const NewArticleContainer({
     super.key,
-    //required this.controller, required this.hint,
+    required this.controller,
+    // required this.hint,
   });
-  // final TextEditingController controller;
+  final TextEditingController controller;
   // final TextStyle hint;
 
   @override

@@ -66,6 +66,16 @@ dependencies:
   shared_preferences: ^2.2.0
   circular_image: ^0.0.6
   percent_indicator: ^4.2.3
+  blurrycontainer: ^1.0.2
+  intl_phone_field: ^3.2.0
+  youtube_player_flutter: ^8.1.2
+  get: ^4.6.5
+  email_validator: ^2.1.17
+  form_field_validator: ^1.1.0
+  form_validator: ^2.1.1
+  lottie: ^2.6.0
+  pinput: any
+  super_tooltip: ^2.0.5
 
 dev_dependencies:
   flutter_test:

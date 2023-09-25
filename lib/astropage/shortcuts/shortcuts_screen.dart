@@ -1,5 +1,5 @@
 import 'package:astrology_app/allclass/astroclassall.dart';
-import 'package:astrology_app/astropage/support_screen.dart';
+import 'package:astrology_app/astropage/support/support_screen.dart';
 import 'package:astrology_app/controller/controller.dart';
 import 'package:astrology_app/model/shortcut_model.dart';
 import 'package:flutter/material.dart';

@@ -1,6 +1,7 @@
 //----------------------------------------------login hours-------------------------------------------------------------------------
 
 import 'dart:ui';
+import 'package:astrology_app/astropage/HomePage_astrologer/dashboard_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
@@ -306,10 +307,12 @@ class _SectionState extends State<Section> {
             borderRadius: BorderRadius.circular(0),
 //---------------------------------------------------------Say hii Container-------------------------------------------------------------------------------
             child: Container(
+              height: 20,
+              width: 30,
               decoration: BoxDecoration(
                   color: Colors.white.withOpacity(0.2),
                   borderRadius: BorderRadius.circular(30)),
-              child:  Row(
+              child: const Row(
                 children: [
                   Padding(
                     padding: EdgeInsets.only(left: 10),
@@ -491,7 +494,10 @@ class _SideBarState extends State<SideBar> {
           color: Colors.white.withOpacity(0.3),
         ),
         child: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => AstroDashBoardPage()));
+          },
           icon: const Icon(
             Icons.call_end_rounded,
             color: Colors.red,

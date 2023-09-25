@@ -88,12 +88,7 @@ class _PaymentReportPageState extends State<PaymentReportPage> {
               ),
               AllButtonPage(
                 btnText: 'Find Request',
-                pressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: ((context) => const SetRate())));
-                },
+                pressed: () {},
               ),
               const SizedBox(
                 height: 20,
@@ -179,10 +174,11 @@ class _PaymentReportPageState extends State<PaymentReportPage> {
               const SizedBox(
                 height: 20,
               ),
+              // ignore: prefer_const_constructors
               Row(
                 children: const [
                   Text(
-                    'In case of any query related to payment feel \nfre to write to us  ',
+                    'In case of any query related to payment feel\nfree to write to us  ',
                     style: TextStyle(
                       color: Color.fromARGB(255, 141, 140, 140),
                       fontSize: 15,

@@ -1,5 +1,4 @@
 import 'package:astrology_app/astropage/HomePage_astrologer/hpclass.dart';
-import 'package:astrology_app/astropage/earning_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 
@@ -31,141 +30,157 @@ class _AstroDashBoardPageState extends State<AstroDashBoardPage> {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Image.asset(
-                        'assets/images/logo.png',
-                        height: 80,
-                        width: 80,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          IconButton(
-                            onPressed: () {},
-                            icon: const Icon(
-                              Icons.help_outline,
-                              size: 27,
-                              color: Colors.white,
-                            ),
-                          ),
-                          IconButton(
-                            onPressed: () {},
-                            icon: const Icon(
-                              Icons.notifications_outlined,
-                              size: 27,
-                              color: Colors.white,
-                            ),
-                          ),
-                          FlutterSwitch(
-                            width: 60,
-                            height: 20,
-                            activeColor: Colors.white.withOpacity(0.2),
-                            inactiveToggleColor: Colors.white,
-                            inactiveColor: Colors.white.withOpacity(0.2),
-                            activeToggleColor: Colors.green,
-                            valueFontSize: 10,
-                            value: online_status,
-                            borderRadius: 15,
-                            toggleSize: 18,
-                            activeText: 'Online',
-                            inactiveText: 'Ofline',
-                            activeTextColor: Colors.white,
-                            showOnOff: true,
-                            onToggle: (sStatus) {
-                              setState(() {
-                                online_status = sStatus;
-                              });
-                            },
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          const Text(
-                            'Calls',
-                            style: TextStyle(
-                                fontSize: 15,
-                                // fontWeight: FontWeight.bold,
-                                color: Colors.white),
-                          ),
-                          const SizedBox(
-                            width: 15,
-                          ),
-                          FlutterSwitch(
-                            width: 40,
-                            height: 20,
-                            activeColor: Colors.white.withOpacity(0.2),
-                            inactiveToggleColor: Colors.white,
-                            inactiveColor: Colors.white.withOpacity(0.2),
-                            activeToggleColor: Colors.green,
-                            valueFontSize: 10,
-                            value: call_status,
-                            borderRadius: 15,
-                            toggleSize: 10.0,
-                            activeTextColor: Colors.white,
-                            showOnOff: true,
-                            onToggle: (sStatus) {
-                              setState(() {
-                                call_status = sStatus;
-                              });
-                            },
-                          ),
-                        ],
+                      Image.asset(
+                        'assets/images/dblogo.jpg',
+                        height: 100,
+                        width: 100,
                       ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
+                      const Spacer(),
+                      Column(
+                        //mainAxisAlignment: MainAxisAlignment.end,
+                        crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
-                          const Text(
-                            'Chats',
-                            style: TextStyle(
-                                fontSize: 15,
-                                // fontWeight: FontWeight.bold,
-                                color: Colors.white),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              IconButton(
+                                onPressed: () {},
+                                icon: const Icon(
+                                  Icons.help_outline,
+                                  size: 27,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              IconButton(
+                                  onPressed: () {
+                                    showDialog(
+                                        context: context,
+                                        builder: (BuildContext context) =>
+                                            const NotificationBell());
+                                  },
+                                  icon: Icon(
+                                    Icons.notifications_none_outlined,
+                                    color: Colors.white,
+                                  )),
+                              FlutterSwitch(
+                                width: 60,
+                                height: 23,
+                                activeColor: Colors.white.withOpacity(0.2),
+                                inactiveToggleColor: Colors.white,
+                                inactiveColor: Colors.white.withOpacity(0.2),
+                                activeToggleColor:
+                                    const Color.fromARGB(255, 21, 200, 27),
+                                valueFontSize: 10,
+                                value: online_status,
+                                borderRadius: 15,
+                                toggleSize: 18,
+                                activeText: 'Online',
+                                inactiveText: 'Offline',
+                                activeTextColor: Colors.white,
+                                showOnOff: true,
+                                onToggle: (sStatus) {
+                                  setState(() {
+                                    online_status = sStatus;
+                                  });
+                                },
+                              ),
+                            ],
                           ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          FlutterSwitch(
-                            width: 40,
-                            height: 20,
-                            activeColor: Colors.white.withOpacity(0.2),
-                            inactiveToggleColor: Colors.white,
-                            inactiveColor: Colors.white.withOpacity(0.2),
-                            activeToggleColor: Colors.green,
-                            valueFontSize: 10,
-                            value: chat_status,
-                            borderRadius: 15,
-                            toggleSize: 10.0,
-                            activeTextColor: Colors.white,
-                            showOnOff: true,
-                            onToggle: (sStatus) {
-                              setState(() {
-                                chat_status = sStatus;
-                              });
-                            },
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    const Text(
+                                      'Calls',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 15,
+                                          color: Colors.white),
+                                    ),
+                                    const SizedBox(
+                                      width: 15,
+                                    ),
+                                    FlutterSwitch(
+                                      width: 43,
+                                      height: 20,
+                                      activeColor:
+                                          Colors.white.withOpacity(0.2),
+                                      inactiveToggleColor: Colors.white,
+                                      inactiveColor:
+                                          Colors.white.withOpacity(0.2),
+                                      activeToggleColor: Colors.green,
+                                      valueFontSize: 10,
+                                      value: call_status,
+                                      borderRadius: 15,
+                                      toggleSize: 10.0,
+                                      activeTextColor: Colors.white,
+                                      showOnOff: true,
+                                      onToggle: (sStatus) {
+                                        setState(() {
+                                          call_status = sStatus;
+                                        });
+                                      },
+                                    ),
+                                  ],
+                                ),
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    const Text(
+                                      'Chats',
+                                      style: TextStyle(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w500,
+                                          color: Colors.white),
+                                    ),
+                                    const SizedBox(
+                                      width: 10,
+                                    ),
+                                    FlutterSwitch(
+                                      width: 43,
+                                      height: 20,
+                                      activeColor:
+                                          Colors.white.withOpacity(0.2),
+                                      inactiveToggleColor: Colors.white,
+                                      inactiveColor:
+                                          Colors.white.withOpacity(0.2),
+                                      activeToggleColor: Colors.green,
+                                      valueFontSize: 10,
+                                      value: chat_status,
+                                      borderRadius: 15,
+                                      toggleSize: 10.0,
+                                      activeTextColor: Colors.white,
+                                      showOnOff: true,
+                                      onToggle: (sStatus) {
+                                        setState(() {
+                                          chat_status = sStatus;
+                                        });
+                                      },
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
                         ],
                       ),
                     ],
                   ),
                 ),
+
                 const SizedBox(
                   height: 15,
                 ),
-                HomeContainer(),
+                const HomeContainer(),
                 const SizedBox(
                   height: 15,
                 ),
@@ -174,10 +189,10 @@ class _AstroDashBoardPageState extends State<AstroDashBoardPage> {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const EarningPage()));
+                      showDialog(
+                          context: context,
+                          builder: (BuildContext context) =>
+                              const BoostMyProfile());
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white.withOpacity(0.2),
@@ -198,7 +213,7 @@ class _AstroDashBoardPageState extends State<AstroDashBoardPage> {
                 const SizedBox(
                   height: 10,
                 ),
-                GridClass(),
+                const GridClass(),
                 // Padding(
                 //   padding: const EdgeInsets.all(8.0),
                 //   child: GridView.builder(

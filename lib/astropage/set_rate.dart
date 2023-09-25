@@ -74,9 +74,9 @@ class _SetRateState extends State<SetRate> {
                   color: Colors.white.withOpacity(0.2),
                   borderRadius: BorderRadius.circular(15),
                 ),
-                child: Row(
+                child: const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children: [
                     Text(
                       "Call/ Chat/ Private Call Rate: ",
                       style: TextStyle(
@@ -90,8 +90,8 @@ class _SetRateState extends State<SetRate> {
               const SizedBox(
                 height: 20,
               ),
-              Row(
-                children: const [
+              const Row(
+                children: [
                   Padding(
                     padding: EdgeInsets.only(left: 13),
                   ),
@@ -104,7 +104,7 @@ class _SetRateState extends State<SetRate> {
               const SizedBox(
                 height: 10,
               ),
-              Container(
+              SizedBox(
                 height: 45,
                 width: 330,
                 child: TextFormField(
@@ -127,8 +127,8 @@ class _SetRateState extends State<SetRate> {
               const SizedBox(
                 height: 20,
               ),
-              Row(
-                children: const [
+              const Row(
+                children: [
                   Padding(
                     padding: EdgeInsets.only(left: 13),
                   ),
@@ -161,8 +161,8 @@ class _SetRateState extends State<SetRate> {
               const SizedBox(
                 height: 20,
               ),
-              Row(
-                children: const [
+              const Row(
+                children: [
                   Padding(
                     padding: EdgeInsets.only(left: 13),
                   ),

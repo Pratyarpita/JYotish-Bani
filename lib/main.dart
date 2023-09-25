@@ -1,6 +1,7 @@
-import 'package:astrology_app/astropage/HomePage_astrologer/dashboard_screen.dart';
 import 'package:astrology_app/astropage/bottom_nav_bar/bottom.dart';
+import 'package:astrology_app/astropage/splash/splas_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,9 +12,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
         debugShowCheckedModeBanner: false,
         // theme: ThemeData(primarySwatch: Colors.blue),
-        home: const CustomBottomNavigationBar());
+        home: CustomBottomNavigationBar());
   }
 }

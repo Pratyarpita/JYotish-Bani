@@ -12,15 +12,14 @@ class ArticlePage extends StatefulWidget {
 
 class _ArticlePageState extends State<ArticlePage>
     with TickerProviderStateMixin {
-  Map<String, int> tabs = {"submit": 0, "draft": 1, "publish": 2};
+  Map<String, int> tabs = {"new": 0,"submit": 1, "draft": 2, "publish": 3};
 
   late TabController? _controller;
 
   @override
   void initState() {
     _controller = TabController(
-        initialIndex: tabs[widget.tabname]!, 
-        length: tabs.length, vsync: this);
+        initialIndex: tabs[widget.tabname]!, length: tabs.length, vsync: this);
     super.initState();
   }
 
@@ -60,9 +59,9 @@ class _ArticlePageState extends State<ArticlePage>
                   indicatorWeight: 2,
                   indicatorColor: Colors.white,
                   tabs: const [
-                    // Tab(
-                    //   text: 'New',
-                    // ),
+                    Tab(
+                      text: 'New',
+                    ),
                     Tab(
                       text: 'Submitted',
                     ),
@@ -78,7 +77,7 @@ class _ArticlePageState extends State<ArticlePage>
                 child: TabBarView(
                   controller: _controller,
                   children: const [
-                    // NewTab1(),
+                    NewTab1(),
                     SubmittedTab1(),
                     DraftTab(),
                     Publishedpage1(),
